@@ -4,60 +4,258 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CS 138 / CS 139 GitHub glossary and mini-lesson assignment</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172026;
+      --muted: #53616b;
+      --line: #d8e0e5;
+      --surface: #f7f9fa;
+      --accent: #1f6f8b;
+      --accent-soft: #e7f2f7;
+      --mark: #7a4f9a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #ffffff;
+      font: 17px/1.62 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+    }
+
+    header {
+      border-bottom: 4px solid var(--accent);
+      padding-bottom: 28px;
+      margin-bottom: 34px;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0 0 18px;
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 34px 0 12px;
+      padding-top: 6px;
+      font-size: 1.35rem;
+      line-height: 1.25;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    a {
+      color: var(--accent);
+      text-underline-offset: 3px;
+    }
+
+    ul {
+      margin: 0 0 18px;
+      padding-left: 1.25rem;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    pre {
+      overflow-x: auto;
+      margin: 14px 0 22px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--mark);
+      background: var(--surface);
+      border-radius: 6px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .meta li,
+    .criteria li {
+      margin: 0;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: 6px;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .lead {
+      max-width: 760px;
+      color: #26343c;
+      font-size: 1.12rem;
+    }
+
+    .section {
+      border-top: 1px solid var(--line);
+      padding-top: 4px;
+    }
+
+    .callout {
+      margin: 22px 0;
+      padding: 18px 20px;
+      border-left: 5px solid var(--accent);
+      background: var(--accent-soft);
+      border-radius: 6px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .criteria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 10px;
+      padding: 0;
+      list-style: none;
+    }
+
+    footer {
+      margin-top: 44px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 560px) {
+      main {
+        padding: 32px 18px 54px;
+      }
+
+      body {
+        font-size: 16px;
+      }
+    }
+
+    @media print {
+      body {
+        font-size: 11pt;
+      }
+
+      main {
+        max-width: none;
+        padding: 0;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>CS 138 / CS 139 GitHub glossary and mini-lesson assignment</h1>
+  <main>
+    <header>
+      <h1>CS 138 / CS 139 GitHub glossary and mini-lesson assignment</h1>
+      <p class="lead">
+        An open pedagogy assignment for Python courses in which students create
+        reusable glossary entries, worked examples, and inclusive learning notes.
+      </p>
+      <ul class="meta" aria-label="Resource details">
+        <li><span class="label">Author</span>Brent Varga</li>
+        <li><span class="label">Institution</span>MiraCosta College</li>
+        <li><span class="label">Resource type</span>Assignment</li>
+        <li><span class="label">License</span>
+          <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
+        </li>
+      </ul>
+    </header>
 
-  <p><strong>Author:</strong> Brent Varga</p>
-  <p><strong>Institution:</strong> MiraCosta College</p>
-  <p><strong>Resource type:</strong> Assignment</p>
-  <p><strong>License:</strong> CC BY-NC 4.0</p>
-  <p><strong>License URL:</strong>
-    <a href="https://creativecommons.org/licenses/by-nc/4.0/">
-      https://creativecommons.org/licenses/by-nc/4.0/
-    </a>
-  </p>
+    <section class="section" aria-labelledby="overview">
+      <h2 id="overview">Overview</h2>
+      <p>
+        In this assignment, students help build a shared open Python learning
+        resource for current and future students. Each student selects one Python
+        concept, programming practice, or dataset-related skill and creates a
+        short glossary entry, worked example, and mini-lesson.
+      </p>
+    </section>
 
-  <h2>Overview</h2>
-  <p>
-    In this assignment, students help build a shared open Python learning
-    resource for current and future students. Each student selects one Python
-    concept, programming practice, or dataset-related skill and creates a short
-    glossary entry, worked example, and mini-lesson.
-  </p>
+    <section class="section" aria-labelledby="purpose">
+      <h2 id="purpose">Purpose</h2>
+      <p>
+        The assignment connects antiracist teaching with open pedagogy by asking
+        students to explain technical ideas in accessible language, choose
+        examples with attention to representation and context, and contribute to
+        a reusable course resource.
+      </p>
+      <p class="callout">
+        Students are treated as contributors to course knowledge, not only as
+        consumers of instructor-created material.
+      </p>
+    </section>
 
-  <h2>Purpose</h2>
-  <p>
-    The assignment connects antiracist teaching with open pedagogy by asking
-    students to explain technical ideas in accessible language, choose examples
-    with attention to representation and context, and contribute to a reusable
-    course resource.
-  </p>
+    <div class="two-column">
+      <section class="section" aria-labelledby="contribution">
+        <h2 id="contribution">Student Contribution</h2>
+        <ul>
+          <li>A clear definition of the selected concept</li>
+          <li>A short explanation of why the concept matters</li>
+          <li>A working Python code example</li>
+          <li>A plain-language walkthrough of the code</li>
+          <li>An inclusive learning note</li>
+          <li>Credits for any dataset, image, text, or code adapted</li>
+        </ul>
+      </section>
 
-  <h2>Student contribution</h2>
-  <ul>
-    <li>A clear definition of the selected concept</li>
-    <li>A short explanation of why the concept matters</li>
-    <li>A working Python code example</li>
-    <li>A plain-language walkthrough of the code</li>
-    <li>An inclusive learning note</li>
-    <li>Credits for any dataset, image, text, or code adapted</li>
-  </ul>
+      <section class="section" aria-labelledby="topics">
+        <h2 id="topics">Suggested Topics</h2>
+        <ul>
+          <li>Variables, data types, and expressions</li>
+          <li>Conditional logic</li>
+          <li>Loops and iteration</li>
+          <li>Lists, dictionaries, tuples, or sets</li>
+          <li>Functions</li>
+          <li>File input and output</li>
+          <li>Data cleaning or visualization</li>
+          <li>Testing or debugging strategies</li>
+        </ul>
+      </section>
+    </div>
 
-  <h2>Suggested topics</h2>
-  <ul>
-    <li>Variables, data types, and expressions</li>
-    <li>Conditional logic</li>
-    <li>Loops and iteration</li>
-    <li>Lists, dictionaries, tuples, or sets</li>
-    <li>Functions</li>
-    <li>File input and output</li>
-    <li>Data cleaning or visualization</li>
-    <li>Testing or debugging strategies</li>
-  </ul>
-
-  <h2>Required structure</h2>
-  <pre><code># Concept name
+    <section class="section" aria-labelledby="structure">
+      <h2 id="structure">Required Structure</h2>
+      <pre><code># Concept name
 
 ## Definition
 Explain the concept in 2-4 sentences.
@@ -77,25 +275,36 @@ inclusive and accessible.
 
 ## Credits
 List any sources, datasets, or adapted materials.</code></pre>
+    </section>
 
-  <h2>Peer review questions</h2>
-  <ul>
-    <li>Is the explanation technically accurate?</li>
-    <li>Would the explanation make sense to a student new to the topic?</li>
-    <li>Does the code run successfully?</li>
-    <li>Does the example avoid unnecessary assumptions about students' backgrounds?</li>
-    <li>Does the inclusive learning note identify a real design choice?</li>
-    <li>What is one specific revision that would improve the entry?</li>
-  </ul>
+    <section class="section" aria-labelledby="review">
+      <h2 id="review">Peer Review Questions</h2>
+      <ul>
+        <li>Is the explanation technically accurate?</li>
+        <li>Would the explanation make sense to a student new to the topic?</li>
+        <li>Does the code run successfully?</li>
+        <li>Does the example avoid unnecessary assumptions about students' backgrounds?</li>
+        <li>Does the inclusive learning note identify a real design choice?</li>
+        <li>What is one specific revision that would improve the entry?</li>
+      </ul>
+    </section>
 
-  <h2>Assessment criteria</h2>
-  <ul>
-    <li>Technical accuracy</li>
-    <li>Clarity</li>
-    <li>Inclusive design</li>
-    <li>Open resource quality</li>
-    <li>Attribution</li>
-    <li>Revision</li>
-  </ul>
+    <section class="section" aria-labelledby="criteria">
+      <h2 id="criteria">Assessment Criteria</h2>
+      <ul class="criteria">
+        <li>Technical accuracy</li>
+        <li>Clarity</li>
+        <li>Inclusive design</li>
+        <li>Open resource quality</li>
+        <li>Attribution</li>
+        <li>Revision</li>
+      </ul>
+    </section>
+
+    <footer>
+      This resource may be shared and adapted for noncommercial teaching
+      purposes with attribution to Brent Varga.
+    </footer>
+  </main>
 </body>
 </html>
